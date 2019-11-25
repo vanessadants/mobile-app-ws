@@ -17,7 +17,7 @@ public class User{
         return new UserBuilder();
     }
 
-    private static class UserBuilder {
+    public static class UserBuilder {
         private String userId;
         private String firstName;
         private String lastName;

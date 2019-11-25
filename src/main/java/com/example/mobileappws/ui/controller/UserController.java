@@ -1,5 +1,7 @@
 package com.example.mobileappws.ui.controller;
 
+import com.example.mobileappws.ui.model.response.User;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -19,9 +21,16 @@ public class UserController {
         return "get user was called, with page = " + page + ", limit = " + limit;
     }
 
-    @GetMapping(path="/{userId}")
-    public String getUser(@PathVariable String userId){
-        return "get user was called with userId = "+userId;
+    @GetMapping(path="/{userId}", produces = {
+            MediaType.APPLICATION_XML_VALUE,
+            MediaType.APPLICATION_JSON_VALUE
+    })
+    public User getUser(@PathVariable String userId){
+        return User.builder()
+                .withFirstName("Vanessa")
+                .withLastName("Costa")
+                .withEmail("vanessa.dantas796@gmail.com")
+                .build();
     }
 
     @PostMapping
