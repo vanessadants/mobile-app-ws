@@ -1,53 +1,54 @@
 package com.example.mobileappws.ui.model.response;
 
-public class User{
+public class UserResponse {
     private String userId;
     private String firstName;
     private String lastName;
     private String email;
 
-    private User(UserBuilder builder) {
+
+    private UserResponse(UserResponseBuilder builder) {
         this.userId = builder.userId;
         this.firstName = builder.firstName;
         this.lastName = builder.lastName;
         this.email = builder.email;
     }
 
-    public static UserBuilder builder(){
-        return new UserBuilder();
+    public static UserResponseBuilder builder(){
+        return new UserResponseBuilder();
     }
 
-    public static class UserBuilder {
+    public static class UserResponseBuilder {
         private String userId;
         private String firstName;
         private String lastName;
         private String email;
 
-        private UserBuilder() {
+        private UserResponseBuilder() {
         }
 
-        public UserBuilder withUserId(String userId) {
+        public UserResponseBuilder withUserId(String userId) {
             this.userId = userId;
             return this;
         }
 
-        public UserBuilder withFirstName(String firstName) {
+        public UserResponseBuilder withFirstName(String firstName) {
             this.firstName = firstName;
             return this;
         }
 
-        public UserBuilder withLastName(String lastName) {
+        public UserResponseBuilder withLastName(String lastName) {
             this.lastName = lastName;
             return this;
         }
 
-        public UserBuilder withEmail(String email) {
+        public UserResponseBuilder withEmail(String email) {
             this.email = email;
             return this;
         }
 
-        public User build(){
-            return new User(this);
+        public UserResponse build(){
+            return new UserResponse(this);
         }
     }
 

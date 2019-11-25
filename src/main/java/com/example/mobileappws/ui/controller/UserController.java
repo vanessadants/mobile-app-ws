@@ -1,6 +1,6 @@
 package com.example.mobileappws.ui.controller;
 
-import com.example.mobileappws.ui.model.response.User;
+import com.example.mobileappws.ui.model.response.UserResponse;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -27,9 +27,9 @@ public class UserController {
             MediaType.APPLICATION_JSON_VALUE,
             MediaType.APPLICATION_XML_VALUE
     })
-    public ResponseEntity<User> getUser(@PathVariable String userId){
+    public ResponseEntity<UserResponse> getUser(@PathVariable String userId){
         return new ResponseEntity<>(
-                User.builder()
+                UserResponse.builder()
                     .withFirstName("Vanessa")
                     .withLastName("Costa")
                     .withEmail("vanessa.dantas796@gmail.com")
