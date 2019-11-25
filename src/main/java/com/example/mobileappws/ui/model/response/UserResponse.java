@@ -6,7 +6,6 @@ public class UserResponse {
     private String lastName;
     private String email;
 
-
     private UserResponse(UserResponseBuilder builder) {
         this.userId = builder.userId;
         this.firstName = builder.firstName;

@@ -6,7 +6,6 @@ public class UserRequest {
     private String email;
     private String password;
 
-
     private UserRequest(UserRequestBuilder builder) {
         this.firstName = builder.firstName;
         this.lastName = builder.lastName;
