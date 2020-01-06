@@ -30,9 +30,9 @@ public class UserController {
     public ResponseEntity<UserResponse> getUser(@PathVariable String userId){
         return new ResponseEntity<>(
                 UserResponse.builder()
-                    .withFirstName("Vanessa")
-                    .withLastName("Costa")
-                    .withEmail("vanessa.dantas796@gmail.com")
+                    .firstName("Vanessa")
+                    .lastName("Costa")
+                    .email("vanessa.dantas796@gmail.com")
                     .build(),
                 HttpStatus.OK);
     }
